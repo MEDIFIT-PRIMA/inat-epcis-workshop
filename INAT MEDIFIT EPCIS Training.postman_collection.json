@@ -1,0 +1,3256 @@
+{
+	"info": {
+		"_postman_id": "ee7026d4-d724-4152-a869-6233e8d40d95",
+		"name": "INAT MEDIFIT EPCIS Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9142618"
+	},
+	"item": [
+		{
+			"name": "TopLevelEventEndpoint",
+			"item": [
+				{
+					"name": "getEvents",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "GS1-EPC-Format",
+								"value": "Always_GS1_Digital_Link",
+								"description": "Always_GS1_Digital_Link,No_Preference,Never_Translates,Always_EPC_URN",
+								"type": "text"
+							},
+							{
+								"key": "GS1-CBV-XML-Format",
+								"value": "Always_Web_URI",
+								"description": "Never_Translates,No_Preference,Always_URN,Always_Web_URI",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "GS1-EPCIS-Version",
+								"value": "1.2.0",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/events",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventsFromAction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/eventTypes/ObjectEvent/events?EQ_action=OBSERVE",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventTypes",
+								"ObjectEvent",
+								"events"
+							],
+							"query": [
+								{
+									"key": "EQ_action",
+									"value": "OBSERVE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventsFromDisposition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/dispositions/in_progress/events?perPage=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dispositions",
+								"in_progress",
+								"events"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventsFromBizSteps",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/bizSteps/commissioning/events?perPage=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bizSteps",
+								"commissioning",
+								"events"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventsFromEPC",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/epcs/urn:epc:id:sgtin:0614141.107346.2018/events?perPage=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"epcs",
+								"urn:epc:id:sgtin:0614141.107346.2018",
+								"events"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventsFromBizLocation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/bizLocations/urn:epc:id:sgln:0012345.11111.0/events?perPage=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bizLocations",
+								"urn:epc:id:sgln:0012345.11111.0",
+								"events"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventsFromReadpoints",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/readPoints/urn:epc:id:sgln:0012345.11111.400/events?perPage=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"readPoints",
+								"urn:epc:id:sgln:0012345.11111.400",
+								"events"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventsFromInnerUserExtensions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "GS1-Extensions",
+								"value": "\"fskx\": \"https://medifit-prima.github.io/fsklab-json/1.0.4/FSKModel.json\"",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/events?EQ_INNER_fskx:scope.fskx:spatialInformation=Poland",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "EQ_INNER_fskx:scope.fskx:spatialInformation",
+									"value": "Poland"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventTypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/eventTypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventFromEventID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/events/urn%3Auuid%3A8e429718%2D325f%2D4f05%2D8473%2D166a6548833a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"urn%3Auuid%3A8e429718%2D325f%2D4f05%2D8473%2D166a6548833a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventFromEventHash",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/events/ni%3A%2F%2F%2Fsha-256%3Baa49daa1fe0b773e0437e546078dc87de9c864d5b9babe84488f31478887fdf3%3Fver%3DCBV2.0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"ni%3A%2F%2F%2Fsha-256%3Baa49daa1fe0b773e0437e546078dc87de9c864d5b9babe84488f31478887fdf3%3Fver%3DCBV2.0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventsMatchEPC",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/events?perPage=20&MATCH_epc=fskx:model:uuid:65b159d1-cd9e-4783-8aad-7f3e9da421",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "20"
+								},
+								{
+									"key": "MATCH_epc",
+									"value": "fskx:model:uuid:65b159d1-cd9e-4783-8aad-7f3e9da421"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "EPCIS 2.0 REST Endpoints for accessing events"
+		},
+		{
+			"name": "CaptureFlow",
+			"item": [
+				{
+					"name": "captureBehaviorRollback",
+					"item": [
+						{
+							"name": "testRollbackFeature",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "proceed",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2005-07-11T11:30:47.000Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"eventID\": \"ni:///sha-256;a98f08ae6ac4de3482054314d637c07010b448d3802dccb028a06aafcc6a4b10?ver=CBV2.0\",\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2021-02-09T14:58:56.591Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"action\": \"ADD\",\n                \"bizStep\": \"receiving\",\n                \"disposition\": \"in_progress\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:0614141.00777.01\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:0614141.00888.01\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:4012345.012345.998876\",\n                        \"quantity\": 200,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"sourceList\": [\n                    {\n                        \"type\": \"possessing_party\",\n                        \"source\": \"urn:epc:id:sgln:4012345.00001.0\"\n                    },\n                    {\n                        \"type\": \"location\",\n                        \"source\": \"urn:epc:id:sgln:4012345.00225.0\"\n                    }\n                ],\n                \"destinationList\": [\n                    {\n                        \"type\": \"owning_party\",\n                        \"destination\": \"urn:epc:id:sgln:0614141.00001.1\"\n                    },\n                    {\n                        \"type\": \"location\",\n                        \"destination\": \"urn:epc:id:sgln:0614141.00777.0\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "IntegrateXML",
+					"item": [
+						{
+							"name": "capture_1.2_XML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "GS1-EPCIS-Version",
+										"value": "1.2.0",
+										"type": "text"
+									},
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<epcis:EPCISDocument xmlns:epcis=\"urn:epcglobal:epcis:xsd:1\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema-instance\" creationDate=\"2005-07-11T11:30:47.000Z\" schemaVersion=\"1.2\">\n    <EPCISBody>\n        <EventList>\n            <ObjectEvent>\n                <eventTime>2005-04-07T20:33:31.116Z</eventTime>\n                <eventTimeZoneOffset>+02:00</eventTimeZoneOffset>\n                <epcList>\n                    <epc>urn:epc:id:sgtin:0614141.107346.2017vv5</epc>\n                    <epc>urn:epc:id:sgtin:0614141.107346.2018vv6</epc>\n                </epcList>\n                <action>OBSERVE</action>\n                <bizStep>shipping</bizStep>\n                <disposition>in_transit</disposition>\n                <readPoint>\n                    <id>urn:epc:id:sgln:0614141.07346.1234</id>\n                </readPoint>\n            </ObjectEvent>\n        </EventList>\n    </EPCISBody>\n</epcis:EPCISDocument>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureEPCISQueryDocXML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<?xml version='1.0' encoding='UTF-8'?>\n<epcisq:EPCISQueryDocument xmlns:epcisq=\"urn:epcglobal:epcis-query:xsd:2\" schemaVersion=\"2.0\" creationDate=\"2023-04-05T16:19:51.704Z\">\n    <EPCISBody>\n        <QueryResults>\n            <queryName>SimpleEventQuery</queryName>\n            <resultsBody>\n                <EventList>\n                    <ObjectEvent>\n                        <eventTime>2022-04-13T12:35:29.017Z</eventTime>\n                        <recordTime>2023-03-29T06:29:04.493Z</recordTime>\n                        <eventTimeZoneOffset>+02:00</eventTimeZoneOffset>\n                        <action>ADD</action>\n                        <bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>\n                        <readPoint>\n                            <id>https://id.gs1.org/414/4796026380009</id>\n                        </readPoint>\n                        <bizLocation>\n                            <id>https://id.gs1.org/414/4796026380009</id>\n                        </bizLocation>\n                        <bizTransactionList>\n                            <bizTransaction type=\"urn:epcglobal:cbv:btt:po\">http://transaction.acme.com/po/12345679</bizTransaction>\n                        </bizTransactionList>\n                        <quantityList>\n                            <quantityElement>\n                                <epcClass>https://id.gs1.org/01/04796026380245/10/01ms0</epcClass>\n                                <quantity>29.0</quantity>\n                                <uom>KGM</uom>\n                            </quantityElement>\n                        </quantityList>\n                    </ObjectEvent>\n                    <ObjectEvent>\n                        <eventTime>2022-04-13T12:35:29.017Z</eventTime>\n                        <recordTime>2023-03-29T06:29:04.493Z</recordTime>\n                        <eventTimeZoneOffset>+02:00</eventTimeZoneOffset>\n                        <action>ADD</action>\n                        <bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>\n                        <readPoint>\n                            <id>https://id.gs1.org/414/4796026380009</id>\n                        </readPoint>\n                        <bizLocation>\n                            <id>https://id.gs1.org/414/4796026380009</id>\n                        </bizLocation>\n                        <bizTransactionList>\n                            <bizTransaction type=\"urn:epcglobal:cbv:btt:po\">http://transaction.acme.com/po/12345679</bizTransaction>\n                        </bizTransactionList>\n                        <quantityList>\n                            <quantityElement>\n                                <epcClass>https://id.gs1.org/01/04796026380245/10/01ms1</epcClass>\n                                <quantity>29.0</quantity>\n                                <uom>KGM</uom>\n                            </quantityElement>\n                        </quantityList>\n                    </ObjectEvent>\n                </EventList>\n            </resultsBody>\n        </QueryResults>\n    </EPCISBody>\n</epcisq:EPCISQueryDocument>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "capture_2.0_XML",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<epcis:EPCISDocument xmlns:epcis=\"urn:epcglobal:epcis:xsd:2\" schemaVersion=\"2.0\" creationDate=\"2005-07-11T11:30:47.000Z\">\n    <EPCISBody>\n        <EventList>\n            <ObjectEvent>\n                <eventTime>2005-05-03T20:33:31.116Z</eventTime>\n                <eventTimeZoneOffset>+02:00</eventTimeZoneOffset>\n                <epcList>\n                    <epc>urn:epc:id:sgtin:0614141.107346.2017vv5</epc>\n                    <epc>urn:epc:id:sgtin:0614141.107346.2018vv6</epc>\n                </epcList>\n                <action>OBSERVE</action>\n                <bizStep>shipping</bizStep>\n                <disposition>in_transit</disposition>\n                <readPoint>\n                    <id>urn:epc:id:sgln:0614141.07346.1234</id>\n                </readPoint>\n            </ObjectEvent>\n        </EventList>\n    </EPCISBody>\n</epcis:EPCISDocument>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ErrorDeclarationFlow",
+					"item": []
+				},
+				{
+					"name": "GET Capture",
+					"item": [
+						{
+							"name": "getCaptureJobs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/capture?perPage=30",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									],
+									"query": [
+										{
+											"key": "perPage",
+											"value": "30"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCaptureJobByCaptureID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/capture/578a1542-17ab-4f52-b91f-95065f7164e0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture",
+										"578a1542-17ab-4f52-b91f-95065f7164e0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST CaptureRequest",
+					"item": [
+						{
+							"name": "captureEvents",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "rollback",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2022-04-13T12:35:29.017Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-05-13T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.01817\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureEventsInEPCISQueryDoc",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "rollback",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n        {\n            \"example\": \"http://ns.example.com/epcis/\"\n        }\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISQueryDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2005-07-11T11:30:47.000Z\",\n    \"epcisBody\": {\n        \"queryResults\": {\n            \"subscriptionID\": \"32d2aec1-a6d2-46d9-900a-24124288cce1\",\n            \"queryName\": \"SimpleEventQuery\",\n            \"resultsBody\": {\n                \"eventList\": [\n                    {\n                        \"type\": \"ObjectEvent\",\n                        \"action\": \"OBSERVE\",\n                        \"bizStep\": \"shipping\",\n                        \"disposition\": \"in_transit\",\n                        \"epcList\": [\n                            \"urn:epc:id:sgtin:0614141.107346.2017\",\n                            \"urn:epc:id:sgtin:0614141.107346.2018\"\n                        ],\n                        \"eventTime\": \"2005-04-03T20:33:31.116Z\",\n                        \"eventTimeZoneOffset\": \"-06:00\",\n                        \"readPoint\": {\n                            \"id\": \"urn:epc:id:sgln:0614141.07346.1234\"\n                        },\n                        \"bizTransactionList\": [\n                            {\n                                \"type\": \"po\",\n                                \"bizTransaction\": \"http://transaction.acme.com/po/12345678\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"ObjectEvent\",\n                        \"action\": \"OBSERVE\",\n                        \"bizStep\": \"receiving\",\n                        \"disposition\": \"in_progress\",\n                        \"epcList\": [\n                            \"urn:epc:id:sgtin:0614141.107346.2018\"\n                        ],\n                        \"eventTime\": \"2005-04-04T20:33:31.116Z\",\n                        \"eventTimeZoneOffset\": \"-06:00\",\n                        \"readPoint\": {\n                            \"id\": \"urn:epc:id:sgln:0012345.11111.400\"\n                        },\n                        \"bizLocation\": {\n                            \"id\": \"urn:epc:id:sgln:0012345.11111.0\"\n                        },\n                        \"bizTransactionList\": [\n                            {\n                                \"type\": \"po\",\n                                \"bizTransaction\": \"http://transaction.acme.com/po/12345678\"\n                            },\n                            {\n                                \"type\": \"desadv\",\n                                \"bizTransaction\": \"urn:epcglobal:cbv:bt:0614141073467:1152\"\n                            }\n                        ],\n                        \"example:myField\": \"Example of a vendor/user extension\"\n                    }\n                ]\n            }\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureExample_9.6.1-ObjectEvent.jsonld",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n        {\n            \"example\": \"http://ns.example.com/epcis/\"\n        }\n    ],\n    \"id\": \"https://id.example.org/document2\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2021-06-06T11:30:47.000Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"shipping\",\n                \"disposition\": \"in_transit\",\n                \"epcList\": [\n                    \"urn:epc:id:sgtin:0614141.107346.2019\",\n                    \"urn:epc:id:sgtin:0614141.107346.2020\"\n                ],\n                \"eventTime\": \"2021-06-06T20:33:31.116Z\",\n                \"eventTimeZoneOffset\": \"-06:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:0614141.07346.1234\"\n                },\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345678\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"receiving\",\n                \"disposition\": \"in_progress\",\n                \"epcList\": [\n                    \"urn:epc:id:sgtin:0614141.107346.2021\"\n                ],\n                \"eventTime\": \"2005-04-04T20:33:31.116Z\",\n                \"eventTimeZoneOffset\": \"-06:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:0012345.11111.400\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:0012345.11111.0\"\n                },\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345678\"\n                    },\n                    {\n                        \"type\": \"desadv\",\n                        \"bizTransaction\": \"urn:epcglobal:cbv:bt:0614141073467:1152\"\n                    }\n                ],\n                \"example:myField\": \"Example of a vendor/user extension\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureStandardVocabElementInDiffFormat",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n        {\n            \"example\": \"http://ns.example.com/epcis/\"\n        }\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2005-07-11T11:30:47.000Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"AggregationEvent\",\n                \"eventTime\": \"2021-04-08T14:58:56.591Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"parentID\": \"urn:epc:id:sscc:0614141.1234567890\",\n                \"childEPCs\": [\n                    \"https://id.gs1.org/01/70614141123451/21/2017\",\n                    \"https://id.gs1.org/01/70614141123451/21/2018\"\n                ],\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"receiving\",\n                \"disposition\": \"in_progress\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:0614141.00777.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:0614141.00888.0\"\n                },\n                \"childQuantityList\": [\n                    {\n                        \"epcClass\": \"https://id.gs1.org/01/04012345987652\",\n                        \"quantity\": 10\n                    },\n                    {\n                        \"epcClass\": \"https://id.gs1.org/01/04012345123456/10/998877\",\n                        \"quantity\": 200.5,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"example:myField\": \"Example of a vendor/user extension\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureExample_9.6.2-ObjectEvent.jsonld",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n        {\n            \"example\": \"http://ns.example.com/epcis/\"\n        }\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2005-07-11T11:30:47.000Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"eventID\": \"ni:///sha-256;a98f08ae6ac4de3482054314d637c07010b448d3802dccb028a06aafcc6a4b10?ver=CBV2.0\",\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2013-06-08T14:58:56.591Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"receiving\",\n                \"disposition\": \"in_progress\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:0614141.00777.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:0614141.00888.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:4012345.012345.998877\",\n                        \"quantity\": 200,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"sourceList\": [\n                    {\n                        \"type\": \"possessing_party\",\n                        \"source\": \"urn:epc:id:sgln:4012345.00001.0\"\n                    },\n                    {\n                        \"type\": \"location\",\n                        \"source\": \"urn:epc:id:sgln:4012345.00225.0\"\n                    }\n                ],\n                \"destinationList\": [\n                    {\n                        \"type\": \"owning_party\",\n                        \"destination\": \"urn:epc:id:sgln:0614141.00001.0\"\n                    },\n                    {\n                        \"type\": \"location\",\n                        \"destination\": \"urn:epc:id:sgln:0614141.00777.0\"\n                    }\n                ],\n                \"example:myField\": \"Example of a vendor/user extension\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "testCaptureFlowForErrorDeclaration",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "Proceed",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n        {\n            \"example\": \"http://ns.example.com/epcis/\"\n        }\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2005-07-11T11:30:47.000Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"eventID\": \"ni:///sha-256;aa49daa1fe0b773e0437e546078dc87de9c864d5b9babe84488f31478887fdf3?ver=CBV2.0\",\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"shipping\",\n                \"disposition\": \"in_transit\",\n                \"epcList\": [\n                    \"urn:epc:id:sgtin:0614141.107346.2017\",\n                    \"urn:epc:id:sgtin:0614141.107346.2018\"\n                ],\n                \"eventTime\": \"2005-04-03T20:33:31.116Z\",\n                \"eventTimeZoneOffset\": \"-06:00\",\n                \"errorDeclaration\": {\n                    \"declarationTime\": \"2021-02-01T22:46:31.117Z\",\n                    \"reason\": \"urn:epcglobal:cbv:er:incorrect-data\",\n                    \"correctiveEventIDs\": [\n                        \"ni:///sha-256;c6407ffcac52ec159528f2b556ba4ac3844c5aa48485c1fd61643e94f0a2d678?ver=CBV2.0\",\n                        \"urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bc6\"\n                    ]\n                },\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:0614141.07346.1234\"\n                },\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345678\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"receiving\",\n                \"disposition\": \"in_progress\",\n                \"epcList\": [\n                    \"urn:epc:id:sgtin:0614141.107346.2018\"\n                ],\n                \"eventTime\": \"2021-04-04T20:33:31.116Z\",\n                \"eventTimeZoneOffset\": \"-06:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:0012345.11111.400\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:0012345.11111.0\"\n                },\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345678\"\n                    },\n                    {\n                        \"type\": \"desadv\",\n                        \"bizTransaction\": \"urn:epcglobal:cbv:bt:0614141073467:1152\"\n                    }\n                ],\n                \"example:myField\": \"Example of a vendor/user extension\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureBareEvent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n    \"type\": \"ObjectEvent\",\n    \"action\": \"OBSERVE\",\n    \"bizStep\": \"inspecting\",\n    \"eventTime\": \"2021-05-05T15:00:00.000Z\",\n    \"eventTimeZoneOffset\": \"+01:00\",\n    \"readPoint\": {\n        \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n    },\n    \"epcList\": [\n        \"urn:epc:id:sgtin:4012345.011111.98622\"\n    ],\n    \"sensorElementList\": [\n        {\n            \"sensorMetadata\": {\n                \"time\": \"2019-04-02T14:05:00.000Z\",\n                \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                \"rawData\": \"https://example.org/8004/401234599999\"\n            },\n            \"sensorReport\": [\n                {\n                    \"type\": \"Temperature\",\n                    \"value\": 26.0,\n                    \"uom\": \"CEL\"\n                },\n                {\n                    \"type\": \"AbsoluteHumidity\",\n                    \"value\": 12.1,\n                    \"uom\": \"A93\"\n                },\n                {\n                    \"type\": \"Speed\",\n                    \"value\": 160.0,\n                    \"uom\": \"KMH\"\n                },\n                {\n                    \"type\": \"Illuminance\",\n                    \"value\": 800.0,\n                    \"uom\": \"LUX\"\n                }\n            ]\n        },\n        {\n            \"sensorMetadata\": {\n                \"time\": \"2019-04-02T14:35:00.000Z\",\n                \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                \"rawData\": \"https://example.org/8004/401234599999\"\n            },\n            \"sensorReport\": [\n                {\n                    \"type\": \"Temperature\",\n                    \"value\": 26.1,\n                    \"uom\": \"CEL\"\n                },\n                {\n                    \"type\": \"AbsoluteHumidity\",\n                    \"value\": 12.2,\n                    \"uom\": \"A93\"\n                },\n                {\n                    \"type\": \"Speed\",\n                    \"value\": 161.0,\n                    \"uom\": \"KMH\"\n                },\n                {\n                    \"type\": \"Illuminance\",\n                    \"value\": 801.0,\n                    \"uom\": \"LUX\"\n                }\n            ]\n        },\n        {\n            \"sensorMetadata\": {\n                \"time\": \"2019-04-02T14:55:00.000Z\",\n                \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                \"rawData\": \"https://example.org/8004/401234599999\"\n            },\n            \"sensorReport\": [\n                {\n                    \"type\": \"Temperature\",\n                    \"value\": 26.2,\n                    \"uom\": \"CEL\"\n                },\n                {\n                    \"type\": \"AbsoluteHumidity\",\n                    \"value\": 12.2,\n                    \"uom\": \"A93\"\n                },\n                {\n                    \"type\": \"Speed\",\n                    \"value\": 162.0,\n                    \"uom\": \"KMH\"\n                },\n                {\n                    \"type\": \"Illuminance\",\n                    \"value\": 802.0,\n                    \"uom\": \"LUX\"\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/events",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureEventsWithPrivateURN",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n        {\n            \"example\": \"http://ns.example.com/epcis/\"\n        }\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2021-12-14T11:30:47.000Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"eventID\": \"ni:///sha-256;18454584ed96fbb533e4a69b01eefd1bff3edd1e80ef8598957111f4477a0a64?ver=CBV2.0\",\n                \"type\": \"AggregationEvent\",\n                \"action\": \"ADD\",\n                \"bizStep\": \"packing\",\n                \"disposition\": \"in_progress\",\n                \"parentID\": \"urn:epc:id:sscc:4012345.0111111111\",\n                \"childQuantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:4012345.011111.1234\",\n                        \"quantity\": 52,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"eventTime\": \"2019-10-07T15:30:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00025.0\"\n                },\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-07-19T14:00:00.000Z\",\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                            \"rawData\": \"https://example.org/8004/401234599999\",\n                            \"dataProcessingMethod\": \"https://example.com/gdti/4012345000054987\",\n                            \"bizRules\": \"https://example.org/gdti/4012345000054987\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.1,\n                                \"uom\": \"A93\"\n                            },\n                            {\n                                \"type\": \"AmountOfSubstancePerUnitVolume\",\n                                \"chemicalSubstance\": \"https://identifiers.org/inchikey:CZMRCDWAGMRECN-UGDNZRGBSA-N\",\n                                \"value\": 0.18,\n                                \"uom\": \"C35\"\n                            },\n                            {\n                                \"type\": \"AmountOfSubstancePerUnitVolume\",\n                                \"microorganism\": \"https://www.ncbi.nlm.nih.gov/taxonomy/1126011\",\n                                \"value\": 0.05,\n                                \"uom\": \"C35\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorMetadata\": {\n                            \"startTime\": \"2019-04-01T15:00:00.000Z\",\n                            \"endTime\": \"2019-04-02T14:59:59.999Z\",\n                            \"example:someFurtherMetaData\": \"someText\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"minValue\": 12.4,\n                                \"maxValue\": 13.8,\n                                \"meanValue\": 13.2,\n                                \"sDev\": 0.41,\n                                \"uom\": \"CEL\",\n                                \"percRank\": 50,\n                                \"percValue\": 12.7,\n                                \"example:cv\": \"123\"\n                            },\n                            {\n                                \"type\": \"example:someSensorProperty\",\n                                \"stringValue\": \"someSensorOutput\"\n                            }\n                        ],\n                        \"example:furtherSensorData\": [\n                            {\n                                \"example:measure1\": \"123.5\"\n                            },\n                            {\n                                \"example:measure2\": \"0.987\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"time\": \"2019-07-19T14:00:00.000Z\",\n                                \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                                \"rawData\": \"https://example.org/8004/401234599999\",\n                                \"dataProcessingMethod\": \"https://example.com/gdti/4012345000054987\",\n                                \"bizRules\": \"https://example.org/gdti/4012345000054987\"\n                            },\n                            {\n                                \"type\": \"example:someSensorProperty\",\n                                \"stringValue\": \"someSensorOutput\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureEventsWithSingleTermCBV",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n        {\n            \"example\": \"http://ns.example.com/epcis/\"\n        }\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2005-07-11T11:30:47.000Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"eventID\": \"ni:///sha-256;18454584ed96fbb533e4a69b01eefd1bff3edd1e80ef8598957111f4477a0a64?ver=CBV2.0\",\n                \"type\": \"AggregationEvent\",\n                \"action\": \"ADD\",\n                \"bizStep\": \"inspecting\",\n                \"disposition\": \"in_progress\",\n                \"parentID\": \"urn:epc:id:sscc:4012345.0111111111\",\n                \"childQuantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:4012345.011111.1235\",\n                        \"quantity\": 52,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"eventTime\": \"2019-10-07T15:30:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00025.0\"\n                },\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-07-19T14:00:00.000Z\",\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                            \"rawData\": \"https://example.org/8004/401234599999\",\n                            \"dataProcessingMethod\": \"https://example.com/gdti/4012345000054987\",\n                            \"bizRules\": \"https://example.org/gdti/4012345000054987\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.1,\n                                \"uom\": \"A93\"\n                            },\n                            {\n                                \"type\": \"AmountOfSubstancePerUnitVolume\",\n                                \"chemicalSubstance\": \"https://identifiers.org/inchikey:CZMRCDWAGMRECN-UGDNZRGBSA-N\",\n                                \"value\": 0.18,\n                                \"uom\": \"C35\"\n                            },\n                            {\n                                \"type\": \"AmountOfSubstancePerUnitVolume\",\n                                \"microorganism\": \"https://www.ncbi.nlm.nih.gov/taxonomy/1126011\",\n                                \"value\": 0.05,\n                                \"uom\": \"C35\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorMetadata\": {\n                            \"startTime\": \"2019-04-01T15:00:00.000Z\",\n                            \"endTime\": \"2019-04-02T14:59:59.999Z\",\n                            \"example:someFurtherMetaData\": \"someText\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"minValue\": 12.4,\n                                \"maxValue\": 13.8,\n                                \"meanValue\": 13.2,\n                                \"sDev\": 0.41,\n                                \"uom\": \"CEL\",\n                                \"percRank\": 50,\n                                \"percValue\": 12.7,\n                                \"example:cv\": \"123\"\n                            },\n                            {\n                                \"type\": \"example:someSensorProperty\",\n                                \"stringValue\": \"someSensorOutput\"\n                            }\n                        ],\n                        \"example:furtherSensorData\": [\n                            {\n                                \"example:measure1\": \"123.5\"\n                            },\n                            {\n                                \"example:measure2\": \"0.987\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"time\": \"2019-07-19T14:00:00.000Z\",\n                                \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                                \"rawData\": \"https://example.org/8004/401234599999\",\n                                \"dataProcessingMethod\": \"https://example.com/gdti/4012345000054987\",\n                                \"bizRules\": \"https://example.org/gdti/4012345000054987\"\n                            },\n                            {\n                                \"type\": \"example:someSensorProperty\",\n                                \"stringValue\": \"someSensorOutput\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CaptureOneInvalidandOnevalidEvent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "rollback",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2022-04-15T12:35:29.017Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000d9\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000d10\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CaptureOneValidandOneInvalidEvent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "rollback",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2022-04-15T12:35:29.017Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000e1\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"abc\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.0000e2\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CaptureFiveValidEvents",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "rollback",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2022-04-15T12:35:29.017Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b16\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b11\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b12\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b13\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b14\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CaptureFiveValidEventsWithProceed",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "proceed",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2022-04-15T12:35:29.017Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000i10\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000i11\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000i12\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000i13\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000i14\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CaptureTenEventswithValidAndInvalidEvents",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "rollback",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2022-04-15T12:35:29.017Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b1\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b2\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b3\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b4\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000b5\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f1\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f2\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f3\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"abc\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f4\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f5\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CaptureFiveInValidEvents",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "rollback",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2022-04-15T12:35:29.017Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"abc\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f1\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"abc\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f2\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"abc\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f3\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"abc\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f4\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"abc\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000f5\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureSingleValidEvent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "rollback",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2022-04-15T12:35:29.017Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"commissioning\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000a7\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureSingleInvalidEvent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "GS1-Capture-Error-Behaviour",
+										"value": "rollback",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\"\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2022-04-15T12:35:29.017Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2022-04-15T12:35:29.017Z\",\n                \"eventTimeZoneOffset\": \"+02:00\",\n                \"epcList\": [],\n                \"action\": \"ADD\",\n                \"bizStep\": \"abc\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"bizLocation\": {\n                    \"id\": \"urn:epc:id:sgln:479602638.000.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:479602638.0024.000c1\",\n                        \"quantity\": 29,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"bizTransactionList\": [\n                    {\n                        \"type\": \"po\",\n                        \"bizTransaction\": \"http://transaction.acme.com/po/12345679\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "EPCIS Capapilities",
+			"item": [
+				{
+					"name": "Events Options",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/events",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get EventTypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/eventTypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Capture Options",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{api-key}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "API-KEY-SECRET",
+								"value": "{{api-key-secret}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/capture",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"capture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SensorElementRelatedQuery Copy",
+			"item": [
+				{
+					"name": "CaptureEvents",
+					"item": [
+						{
+							"name": "captureEventsWithSensorElement",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n        {\n            \"example\": \"http://ns.example.com/epcis/\"\n        }\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2005-07-11T11:30:47.000Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"AggregationEvent\",\n                \"action\": \"ADD\",\n                \"bizStep\": \"packing\",\n                \"disposition\": \"in_progress\",\n                \"parentID\": \"urn:epc:id:sscc:4012345.0111111111\",\n                \"childQuantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:4012345.011111.1235\",\n                        \"quantity\": 52,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"eventTime\": \"2019-10-07T15:30:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n                },\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-07-19T14:00:00.000Z\",\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                            \"rawData\": \"https://example.org/8004/401234599999\",\n                            \"dataProcessingMethod\": \"https://example.com/253/4012345000054987\",\n                            \"bizRules\": \"https://example.org/253/4012345000054987\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.1,\n                                \"uom\": \"A93\"\n                            },\n                            {\n                                \"type\": \"MolarMass\",\n                                \"chemicalSubstance\": \"urn:epcglobal:cbv:inchikey:CZMRCDWAGMRECN-UGDNZRGBSA-N\",\n                                \"value\": 0.18,\n                                \"uom\": \"C35\"\n                            },\n                            {\n                                \"type\": \"MolarMass\",\n                                \"microorganism\": \"https://www.ncbi.nlm.nih.gov/taxonomy/1126011\",\n                                \"value\": 0.05,\n                                \"uom\": \"C35\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorMetadata\": {\n                            \"startTime\": \"2019-04-01T15:00:00.000Z\",\n                            \"endTime\": \"2019-04-02T14:59:59.999Z\",\n                            \"example:someFurtherMetaData\": \"someText\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"minValue\": 12.4,\n                                \"maxValue\": 13.8,\n                                \"meanValue\": 13.2,\n                                \"sDev\": 0.41,\n                                \"uom\": \"CEL\",\n                                \"percRank\": 50,\n                                \"percValue\": 12.7,\n                                \"example:cv\": \"123\"\n                            }\n                        ],\n                        \"example:furtherSensorData\": [\n                            {\n                                \"example:measure1\": \"123.5\"\n                            },\n                            {\n                                \"example:measure2\": \"0.987\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"time\": \"2019-07-19T14:00:00.000Z\",\n                                \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                                \"rawData\": \"https://example.org/8004/401234599999\",\n                                \"dataProcessingMethod\": \"https://example.com/253/4012345000054987\",\n                                \"bizRules\": \"https://example.org/253/4012345000054987\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"inspecting\",\n                \"epcList\": [\n                    \"urn:epc:id:sgtin:4012345.011111.9876\"\n                ],\n                \"eventTime\": \"2019-10-07T16:00:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n                },\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-07-19T14:00:00.000Z\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"value\": 26.0,\n                                \"uom\": \"CEL\",\n                                \"deviceID\": \"urn:epc:id:giai:4000001.111\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"inspecting\",\n                \"epcList\": [\n                    \"urn:epc:id:sgtin:4012345.011111.9876\"\n                ],\n                \"eventTime\": \"2019-10-07T15:00:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:234567890.1123.9999\",\n                        \"quantity\": 150,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"startTime\": \"2019-04-01T15:00:00.000Z\",\n                            \"endTime\": \"2019-04-02T14:59:59.999Z\",\n                            \"example:someFurtherMetaData\": \"someText\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"minValue\": 12.4,\n                                \"maxValue\": 13.8,\n                                \"meanValue\": 13.2,\n                                \"sDev\": 0.41,\n                                \"uom\": \"CEL\",\n                                \"percRank\": 50,\n                                \"percValue\": 12.7,\n                                \"example:cv\": \"123\"\n                            }\n                        ],\n                        \"example:furtherSensorData\": [\n                            {\n                                \"example:measure1\": \"123.5\"\n                            },\n                            {\n                                \"example:measure2\": \"0.987\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"inspecting\",\n                \"epcList\": [\n                    \"urn:epc:id:sgtin:4012345.011111.9876\"\n                ],\n                \"eventTime\": \"2019-04-02T15:00:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n                },\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"time\": \"2019-04-02T14:05:00.000Z\",\n                                \"value\": 26.0,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"Temperature\",\n                                \"time\": \"2019-04-02T14:15:00.000Z\",\n                                \"value\": 26.1,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"Temperature\",\n                                \"time\": \"2019-04-02T14:25:00.000Z\",\n                                \"value\": 26.2,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"Temperature\",\n                                \"time\": \"2019-04-02T14:35:00.000Z\",\n                                \"value\": 26.3,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"Temperature\",\n                                \"time\": \"2019-04-02T14:45:00.000Z\",\n                                \"value\": 26.4,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"Temperature\",\n                                \"time\": \"2019-04-02T14:55:00.000Z\",\n                                \"value\": 26.5,\n                                \"uom\": \"CEL\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"inspecting\",\n                \"epcList\": [],\n                \"eventTime\": \"2019-04-02T15:00:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n                },\n                \"quantityList\": [\n                    {\n                        \"epcClass\": \"urn:epc:class:lgtin:234567890.1123.9999\",\n                        \"quantity\": 150,\n                        \"uom\": \"KGM\"\n                    }\n                ],\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-04-02T14:55:00.000Z\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"value\": 26.0,\n                                \"uom\": \"CEL\",\n                                \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                                \"rawData\": \"https://example.org/8004/401234599999\"\n                            },\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.1,\n                                \"uom\": \"A93\",\n                                \"deviceID\": \"urn:epc:id:giai:4000001.222\",\n                                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001222\",\n                                \"rawData\": \"https://example.org/8004/401234599999\"\n                            },\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 160,\n                                \"uom\": \"KMH\",\n                                \"deviceID\": \"urn:epc:id:giai:4000001.333\",\n                                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001333\",\n                                \"rawData\": \"https://example.org/8004/401234599999\"\n                            },\n                            {\n                                \"type\": \"Illuminance\",\n                                \"value\": 800,\n                                \"uom\": \"LUX\",\n                                \"deviceID\": \"urn:epc:id:giai:4000001.444\",\n                                \"deviceMetadata\": \"https://id.gs1.org/8004/4000001444\",\n                                \"rawData\": \"https://example.org/8004/401234599999\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"inspecting\",\n                \"epcList\": [],\n                \"eventTime\": \"2019-04-02T15:00:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n                },\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"startTime\": \"2019-04-01T15:00:00.000Z\",\n                            \"endTime\": \"2019-04-02T14:59:59.999Z\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"minValue\": 12.4,\n                                \"maxValue\": 13.8,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"minValue\": 69.2,\n                                \"maxValue\": 72.5,\n                                \"uom\": \"A93\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"inspecting\",\n                \"eventTime\": \"2019-04-02T15:00:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n                },\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-04-02T14:05:00.000Z\",\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                            \"rawData\": \"https://example.org/8004/401234599999\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"value\": 26.0,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.1,\n                                \"uom\": \"A93\"\n                            },\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 160.0,\n                                \"uom\": \"KMH\"\n                            },\n                            {\n                                \"type\": \"Illuminance\",\n                                \"value\": 800.0,\n                                \"uom\": \"LUX\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-04-02T14:35:00.000Z\",\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                            \"rawData\": \"https://example.org/8004/401234599999\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"value\": 26.1,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.2,\n                                \"uom\": \"A93\"\n                            },\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 161.0,\n                                \"uom\": \"KMH\"\n                            },\n                            {\n                                \"type\": \"Illuminance\",\n                                \"value\": 801.0,\n                                \"uom\": \"LUX\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-04-02T14:55:00.000Z\",\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                            \"rawData\": \"https://example.org/8004/401234599999\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"value\": 26.2,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.2,\n                                \"uom\": \"A93\"\n                            },\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 162.0,\n                                \"uom\": \"KMH\"\n                            },\n                            {\n                                \"type\": \"Illuminance\",\n                                \"value\": 802.0,\n                                \"uom\": \"LUX\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"ObjectEvent\",\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"inspecting\",\n                \"epcList\": [\n                    \"urn:epc:id:sgtin:4012345.011111.9876\"\n                ],\n                \"eventTime\": \"2019-04-02T15:00:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n                },\n                \"sensorElementList\": [\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-04-02T14:05:00.000Z\",\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                            \"rawData\": \"https://example.org/8004/401234599999\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"value\": 26.0,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.1,\n                                \"uom\": \"A93\"\n                            },\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 160.0,\n                                \"uom\": \"KMH\"\n                            },\n                            {\n                                \"type\": \"Illuminance\",\n                                \"value\": 800.0,\n                                \"uom\": \"LUX\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-04-02T14:35:00.000Z\",\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                            \"rawData\": \"https://example.org/8004/401234599999\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"value\": 26.1,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.2,\n                                \"uom\": \"A93\"\n                            },\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 161.0,\n                                \"uom\": \"KMH\"\n                            },\n                            {\n                                \"type\": \"Illuminance\",\n                                \"value\": 801.0,\n                                \"uom\": \"LUX\"\n                            }\n                        ]\n                    },\n                    {\n                        \"sensorMetadata\": {\n                            \"time\": \"2019-04-02T14:55:00.000Z\",\n                            \"deviceID\": \"urn:epc:id:giai:4000001.111\",\n                            \"deviceMetadata\": \"https://id.gs1.org/8004/4000001111\",\n                            \"rawData\": \"https://example.org/8004/401234599999\"\n                        },\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Temperature\",\n                                \"value\": 26.2,\n                                \"uom\": \"CEL\"\n                            },\n                            {\n                                \"type\": \"AbsoluteHumidity\",\n                                \"value\": 12.2,\n                                \"uom\": \"A93\"\n                            },\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 162.0,\n                                \"uom\": \"KMH\"\n                            },\n                            {\n                                \"type\": \"Illuminance\",\n                                \"value\": 802.0,\n                                \"uom\": \"LUX\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "captureSensorEventsExample-2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld\",\n        {\n            \"ex\": \"http://ns.example.com/epcis/\"\n        }\n    ],\n    \"id\": \"https://id.example.org/document1\",\n    \"type\": \"EPCISDocument\",\n    \"schemaVersion\": \"2.0\",\n    \"creationDate\": \"2019-12-22T15:00:00.000Z\",\n    \"epcisBody\": {\n        \"eventList\": [\n            {\n                \"type\": \"ObjectEvent\",\n                \"eventTime\": \"2020-12-22T15:00:00.000Z\",\n                \"eventTimeZoneOffset\": \"+01:00\",\n                \"epcList\": [\n                    \"urn:epc:id:sgtin:4012345.022222.1235\"\n                ],\n                \"action\": \"OBSERVE\",\n                \"bizStep\": \"sensor_reporting\",\n                \"readPoint\": {\n                    \"id\": \"urn:epc:id:sgln:4012345.00005.0\"\n                },\n                \"sensorElementList\": [\n                    {\n                        \"sensorReport\": [\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 4.5,\n                                \"component\": \"ex:x\",\n                                \"ex:feature\": \"ex:product\",\n                                \"uom\": \"MTS\",\n                                \"microorganism\": \"https://www.ncbi.nlm.nih.gov/taxonomy/112601\",\n                                \"booleanValue\": true\n                            },\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 12.8,\n                                \"component\": \"ex:y\",\n                                \"ex:feature\": \"ex:product\",\n                                \"uom\": \"MTS\"\n                            },\n                            {\n                                \"type\": \"Speed\",\n                                \"value\": 0,\n                                \"component\": \"ex:z\",\n                                \"ex:feature\": \"ex:product\",\n                                \"uom\": \"MTS\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/capture",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"capture"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "QueryRequests",
+					"item": [
+						{
+							"name": "getEventsByEQ_value_uom",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_value_KEL=299.15",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_value_KEL",
+											"value": "299.15"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_type=Temperature",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "LT_time",
+											"value": "299.15",
+											"disabled": true
+										},
+										{
+											"key": "EQ_type",
+											"value": "Temperature"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "queryTocheckSensorElementExists",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "GS1-Extensions",
+										"value": "\"example\":\"http://ns.example.com/epcis/\"",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EXISTS_SENSORELEMENT_example:furtherSensorData",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_deviceID",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "EXISTS_SENSORELEMENT_example:furtherSensorData",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_deviceID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_deviceID=urn:epc:id:giai:4000001.111",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_deviceID",
+											"value": "urn:epc:id:giai:4000001.111"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByTimeRange",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?LT_time=2020-06-08T14:58:56.591Z&GE_time=2013-06-08T14:58:56.591Z",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "LT_time",
+											"value": "2020-06-08T14:58:56.591Z"
+										},
+										{
+											"key": "GE_time",
+											"value": "2013-06-08T14:58:56.591Z"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_bizRules",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_bizRules=https://example.org/253/4012345000054987",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_bizRules",
+											"value": "https://example.org/253/4012345000054987"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_chemicalSubstance",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_chemicalSubstance=urn:epcglobal:cbv:inchikey:CZMRCDWAGMRECN-UGDNZRGBSA-N",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_chemicalSubstance",
+											"value": "urn:epcglobal:cbv:inchikey:CZMRCDWAGMRECN-UGDNZRGBSA-N"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_microorganism",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_microorganism=https://www.ncbi.nlm.nih.gov/taxonomy/1126011",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_microorganism",
+											"value": "https://www.ncbi.nlm.nih.gov/taxonomy/1126011"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_dataProcessingMethod",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_dataProcessingMethod=https://example.com/253/4012345000054987",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_dataProcessingMethod",
+											"value": "https://example.com/253/4012345000054987"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsBySDev Range",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?GE_sDev=0.20&LT_sDev=0.50",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "GE_sDev",
+											"value": "0.20"
+										},
+										{
+											"key": "LT_sDev",
+											"value": "0.50"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsBypercRank Range",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?GE_percRank=20&LT_percRank=100",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "GE_percRank",
+											"value": "20"
+										},
+										{
+											"key": "LT_percRank",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_stringValue",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_stringValue=someSensorOutput",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_stringValue",
+											"value": "someSensorOutput"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_booleanValue",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_booleanValue=true",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_booleanValue",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_hexBinaryValue",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_hexBinaryValue=AF09",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_hexBinaryValue",
+											"value": "AF09"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEQ_uriValue",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?EQ_uriValue=urn:epc:id:giai:4000001.111",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "EQ_uriValue",
+											"value": "urn:epc:id:giai:4000001.111"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByStartTimeRange",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?LT_startTime=2020-06-08T14:58:56.591Z&GE_startTime=2018-06-08T14:58:56.591Z",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "LT_startTime",
+											"value": "2020-06-08T14:58:56.591Z"
+										},
+										{
+											"key": "GE_startTime",
+											"value": "2018-06-08T14:58:56.591Z"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByMinValueRange",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?GE_minValue_CEL=2&LT_minValue_CEL=20",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "GE_minValue_CEL",
+											"value": "2"
+										},
+										{
+											"key": "LT_minValue_CEL",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByMaxValue Range",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?GE_maxValue_CEL=10&LT_maxValue_CEL=20",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "GE_maxValue_CEL",
+											"value": "10"
+										},
+										{
+											"key": "LT_maxValue_CEL",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByMeanValueRange",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?GE_meanValue_CEL=10&LT_meanValue_CEL=20",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "GE_meanValue_CEL",
+											"value": "10"
+										},
+										{
+											"key": "LT_meanValue_CEL",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByEndTimeRange",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?GE_endTime=2018-06-08T14:58:56.591Z&LT_endTime=2020-06-08T14:58:56.591Z",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "GE_endTime",
+											"value": "2018-06-08T14:58:56.591Z"
+										},
+										{
+											"key": "LT_endTime",
+											"value": "2020-06-08T14:58:56.591Z"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEventsByPercValueRange",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/events?GE_percValue=10&LT_percValue=20",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "GE_percValue",
+											"value": "10"
+										},
+										{
+											"key": "LT_percValue",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NamedEventQuery",
+			"item": [
+				{
+					"name": "PersistQuery",
+					"item": [
+						{
+							"name": "persistEventTimeRange",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"EventTimeRange\",\n    \"query\": {\n        \"GE_eventTime\": \"2005-09-01T02:33:31.116Z\",\n        \"LT_eventTime\": \"2023-12-19T02:33:31.116Z\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/queries",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"queries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "persistEventTypeQuery",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"ObjectEvent\",\n    \"query\": {\n        \"eventType\": [\"ObjectEvent\"]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/queries",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"queries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GETIlmdExtension",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"IlmdExtension\",\n    \"query\": {\n        \"@context\": {\n            \"ns1\": \"http://ns.ftrace.com/epcis\"\n        },\n        \"EQ_INNER_ILMD_ns1:city\": [\"B\"],\n            \"EXISTS_INNER_ILMD_ns1:city\" : 1 \n    \n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/queries/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"queries",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetNamedQuery",
+					"item": [
+						{
+							"name": "getNamedQuery",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/queries",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"queries"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetEventsFromNamedQuery",
+					"item": [
+						{
+							"name": "getEventsFromNamedQuery",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/queries/EventTypeQuery/events?perPage=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"queries",
+										"EventTypeQuery",
+										"events"
+									],
+									"query": [
+										{
+											"key": "perPage",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DeleteNamedQuery",
+					"item": [
+						{
+							"name": "deleteQuery",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/queries/AggregationEvent",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"queries",
+										"AggregationEvent"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "WebhookSubscriptionToNamedQuery",
+					"item": [
+						{
+							"name": "scheduledSubscription",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dest\": \"http://localhost:8080/queries/testWebhookSubscription\",\n    \"signatureToken\": \"13df38d8275b13f05704629e5f1cf3d45d6132d5\",\n    \"reportIfEmpty\": true,\n    \"schedule\": {\n        \"second\": \"0/30\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}} /queries/EventTimeRange/subscriptions",
+									"host": [
+										"{{url}} "
+									],
+									"path": [
+										"queries",
+										"EventTimeRange",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "streamingSubscription",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dest\": \"http://localhost:8080/queries/testWebhookSubscription\",\n    \"signatureToken\": \"13df38d8275b13f05704629e5f1cf3d45d6132d5\",\n    \"reportIfEmpty\": false,\n    \"stream\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}} /queries/EventTimeRange/subscriptions",
+									"host": [
+										"{{url}} "
+									],
+									"path": [
+										"queries",
+										"EventTimeRange",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "invalidSubscription",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dest\": \"http://localhost:8080/queries/testWebhookSubscription\",\n    \"signatureToken\": \"13df38d8275b13f05704629e5f1cf3d45d6132d5\",\n    \"reportIfEmpty\": true,\n    \"stream\":true,\n    \"schedule\": {\n        \"second\": \"0/30\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}} /queries/EventTimeRange/subscriptions",
+									"host": [
+										"{{url}} "
+									],
+									"path": [
+										"queries",
+										"EventTimeRange",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetSubscriptions",
+					"item": [
+						{
+							"name": "checkIfSubscriptionIsActive",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/queries/SimpleEventQuery/subscriptions/c6cdb7b4-d732-436b-a037-b578fed61316",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"queries",
+										"SimpleEventQuery",
+										"subscriptions",
+										"c6cdb7b4-d732-436b-a037-b578fed61316"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllSubscription",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/queries/SimpleEventQuery/subscriptions",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"queries",
+										"SimpleEventQuery",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DeleteSubscription",
+					"item": [
+						{
+							"name": "deleteSubscription",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "{{api-key}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "API-KEY-SECRET",
+										"value": "{{api-key-secret}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/queries/eventTypeQuery/subscriptions/c6cdb7b4-d732-436b-a037-b578fed61316",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"queries",
+										"eventTypeQuery",
+										"subscriptions",
+										"c6cdb7b4-d732-436b-a037-b578fed61316"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Get User Information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User API Key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/user/apikey",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"user",
+								"apikey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate API Key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/user/apikey",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"user",
+								"apikey"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "OpenEPCIS specific REST Endpoint for accessing user and authentication information"
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "refreshTokenUrl",
+				"value": "{{keycloak-refresh-token-url}}",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "openid roles profile microprofile-jwt",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{keycloak-client-id}}",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "{{keycloak-auth-url}}",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "openepcis-token",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "implicit",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": true,
+				"type": "boolean"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
